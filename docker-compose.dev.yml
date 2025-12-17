@@ -1,0 +1,18 @@
+services:
+  back-end:
+    build: 
+      context: .
+      args:
+         NODE_ENV: development
+    ports:
+      - "7002:7002"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGO_IP=mongo
+      - MONGO_PORT=27017
+      - SESSION_SECRET=secret
+      
+    command: npm run dev

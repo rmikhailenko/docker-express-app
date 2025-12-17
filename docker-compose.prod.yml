@@ -1,0 +1,11 @@
+services:
+  back-end:
+    build:
+      context: .
+      args: 
+        NODE_ENV: production
+    ports:
+      - "7003:7003"
+    environment:
+      - NODE_ENV=production
+    command: node index.js
