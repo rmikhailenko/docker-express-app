@@ -1,11 +1,14 @@
 services:
+  nginx:
+    ports: 
+      - "7001:80"
+    depends_on:
+      - back-end
   back-end:
     build: 
       context: .
       args:
          NODE_ENV: development
-    ports:
-      - "7002:7002"
     volumes:
       - ./:/app
       - /app/node_modules

@@ -13,12 +13,12 @@ app.use(redisSession);
 
 const port = 7001;
 
-app.get("/", (_, res) => {
+app.get("/api", (_, res) => {
   return res.status(200).send("<h1>Docker express app works fine</h1>");
 });
 
-app.use(bookRouter);
-app.use(userRouter);
+app.use("/api", bookRouter);
+app.use("/api", userRouter);
 
 app.listen(port, () => {
   console.log(`Server work on http://localhost:${port}`);
