@@ -18,11 +18,11 @@ const redisSession = session({
   store: redisStore,
   secret: SESSION_SECRET,
   cookie: {
-    secure: false,
     resave: false,
+    secure: false,
     saveUninitialized: false,
     httpOnly: true,
-    maxAge: 40000,
+    maxAge: 10000,
   },
 });
 
