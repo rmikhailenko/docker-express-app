@@ -10,4 +10,3 @@ RUN if [ "$NODE_ENV" = "development" ]; \
 
 COPY . ./
 CMD [ "node", "index.js" ]
-
